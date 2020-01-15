@@ -1,8 +1,15 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import Apexcharts from "vue-apexcharts";
+import Fragment from "vue-fragment";
 
-Vue.config.productionTip = false
+import App from "./App.vue";
+import router from "./router";
+
+Vue.config.productionTip = false;
+Vue.use(Fragment.Plugin);
+Vue.component("apex-chart", Apexcharts);
 
 new Vue({
   render: h => h(App),
-}).$mount('#app')
+  router: router
+}).$mount("#app");
