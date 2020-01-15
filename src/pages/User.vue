@@ -2,47 +2,56 @@
   <div>
     <h1 class="title">User</h1>
 
-    <div :class="`modal ${isLoaded ? 'is-active' : ''}`">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <!-- Any other Bulma elements you want -->
-      </div>
-      <!-- <button class="modal-close is-large" aria-label="close"></button> -->
-    </div>
-
-    <p>
-      <button class="button" @click="getUsers()">getuser</button>
-    </p>
+    <button @click="isStart=true" class="button">Start</button>
     <hr />
-    <div class="list is-hoverable">
-      <user-list-item v-for="(each, idx) in users" :key="idx" :user="each" />
-    </div>
+    <ajax
+      v-if="isStart"
+      v-slot="{ data, isLoading }"
+      :url="'https://jsonplaceholder.typicode.com/users'"
+    >
+      <div :class="`modal ${isLoading ? 'is-active' : ''}`">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <h1 class="title">Loading ...</h1>
+        </div>
+      </div>
+      <div class="list is-hoverable">
+        <user-list-item v-for="(each, idx) in data" :key="idx" :user="each" />
+      </div>
+    </ajax>
+    <!-- <p>
+      <button class="button" @click="getUsers()">getuser</button>
+    </p>-->
   </div>
 </template>
 <script>
-import axios from "axios";
+import Ajax from "../components/Ajax";
+
 import UserListItem from "../components/UserListItem";
 
-const url = "https://jsonplaceholder.typicode.com/users";
+// const url = "https://jsonplaceholder.typicode.com/users";
 
 export default {
   data() {
-    return { users: [], isLoaded: false };
+    return { isStart: false };
+    // users: [],
+    // isLoaded: false
   },
   components: {
-    "user-list-item": UserListItem
-  },
-  methods: {
-    async getUsers() {
-      try {
-        this.isLoaded = true;
-        const res = await axios.get(url);
-        this.users = res.data;
-        this.isLoaded = false;
-      } catch (error) {
-        console.log(error.message);
-      }
-    }
+    "user-list-item": UserListItem,
+    ajax: Ajax
   }
+  // methods: {
+  //   async getUsers() {
+  //     try {
+  //       this.isLoaded = true;
+  //       const res = await axios.get(url);
+  //       this.users = res.data;
+  //       this.isLoaded = false;
+  //     } catch (error) {
+  //       console.log(error.message);
+  //     }
+  //   }
+  // }
 };
 </script>

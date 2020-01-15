@@ -4,6 +4,7 @@ import Fragment from "vue-fragment";
 
 import App from "./App.vue";
 import router from "./router";
+import "./vee-validate";
 
 Vue.config.productionTip = false;
 Vue.use(Fragment.Plugin);

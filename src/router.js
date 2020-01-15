@@ -11,6 +11,9 @@ import Chart from "./pages/Chart.vue";
 import Filter from "./pages/Filter.vue";
 import Search from "./pages/Search.vue";
 import Pagination from "./pages/Pagination.vue";
+import Props from "./pages/Props.vue";
+import Form from "./pages/Form.vue";
+import Ref from "./pages/Ref.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +27,9 @@ const routes = [
   { path: "/filter", component: Filter },
   { path: "/search", component: Search },
   { path: "/Pagination", component: Pagination },
+  { path: "/Props", component: Props },
+  { path: "/Form", component: Form },
+  { path: "/Ref", component: Ref },
   { path: "*", component: PageNotFound }
 ];
 

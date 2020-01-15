@@ -25,6 +25,9 @@
         <router-link to="/Pagination" class="navbar-item"
           >Pagination</router-link
         >
+        <router-link to="/Props" class="navbar-item">Props</router-link>
+        <router-link to="/Form" class="navbar-item">Form</router-link>
+        <router-link to="/Ref" class="navbar-item">Ref</router-link>
       </div>
     </nav>
   </div>

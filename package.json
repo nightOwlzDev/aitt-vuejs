@@ -7,11 +7,14 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "animate.css": "^3.7.2",
     "apexcharts": "^3.15.0",
     "axios": "^0.19.1",
     "bulma": "^0.8.0",
     "core-js": "^3.4.4",
     "lodash": "^4.17.15",
+    "pikaday": "^1.8.0",
+    "vee-validate": "^3.2.1",
     "vue": "^2.6.10",
     "vue-apexcharts": "^1.5.2",
     "vue-fragment": "^1.5.1",
