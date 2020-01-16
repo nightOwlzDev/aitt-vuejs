@@ -14,6 +14,9 @@ import Pagination from "./pages/Pagination.vue";
 import Props from "./pages/Props.vue";
 import Form from "./pages/Form.vue";
 import Ref from "./pages/Ref.vue";
+import DataTables from "./pages/DataTables.vue";
+import Upload from "./pages/Upload.vue";
+import I18n from "./pages/I18n.vue";
 
 Vue.use(VueRouter);
 
@@ -30,6 +33,9 @@ const routes = [
   { path: "/Props", component: Props },
   { path: "/Form", component: Form },
   { path: "/Ref", component: Ref },
+  { path: "/DataTables", component: DataTables },
+  { path: "/Upload", component: Upload },
+  { path: "/I18n", component: I18n },
   { path: "*", component: PageNotFound }
 ];
 

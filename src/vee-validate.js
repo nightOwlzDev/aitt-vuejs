@@ -1,5 +1,10 @@
 import Vue from "vue";
-import { ValidationProvider, extend, localize } from "vee-validate";
+import {
+  ValidationObserver,
+  ValidationProvider,
+  extend,
+  localize
+} from "vee-validate";
 import * as rules from "vee-validate/dist/rules";
 
 import th from "vee-validate/dist/locale/th.json";
@@ -16,4 +21,5 @@ localize({
 
 localize("th");
 
+Vue.component("validation-observer", ValidationObserver);
 Vue.component("validation-provider", ValidationProvider);
