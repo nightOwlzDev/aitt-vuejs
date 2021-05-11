@@ -13,7 +13,7 @@
     "bulma": "^0.8.0",
     "core-js": "^3.4.4",
     "datatables": "^1.10.18",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "pikaday": "^1.8.0",
     "vee-validate": "^3.2.1",
     "vue": "^2.6.10",
